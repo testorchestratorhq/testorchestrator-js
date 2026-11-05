@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+coverage
+package-lock.json
+packages/results-schema/src/generated
+packages/results-schema/test/fixtures
+CHANGELOG.md

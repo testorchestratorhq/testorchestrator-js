@@ -1,0 +1,67 @@
+{
+  "name": "@testorchestrator/playwright-reporter",
+  "version": "1.0.0",
+  "description": "Playwright reporter that sends your test results to TestOrchestrator test management: one run per CI job, results matched to test cases, retries, shards, browsers and attachments included.",
+  "keywords": [
+    "playwright",
+    "playwright-reporter",
+    "reporter",
+    "testorchestrator",
+    "test-management",
+    "test-results",
+    "test-reporting",
+    "e2e",
+    "ci",
+    "github-actions",
+    "qa",
+    "automation"
+  ],
+  "homepage": "https://testorchestrator.com/docs/api-keys/ci-integrations#playwright-reporter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testorchestratorhq/testorchestrator-js.git",
+    "directory": "packages/playwright-reporter"
+  },
+  "bugs": {
+    "url": "https://github.com/testorchestratorhq/testorchestrator-js/issues"
+  },
+  "license": "MIT",
+  "author": "Test Orchestrator Ltd (https://testorchestrator.com)",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "@playwright/test": ">=1.40.0"
+  },
+  "devDependencies": {
+    "@testorchestrator/results-schema": "1.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"build/test/*.test.js\"",
+    "coverage": "tsc -p tsconfig.test.json && node --test --experimental-test-coverage --test-coverage-include=\"build/src/**/*.js\" --test-coverage-lines=90 --test-coverage-branches=80 \"build/test/*.test.js\"",
+    "prepack": "npm run build"
+  }
+}

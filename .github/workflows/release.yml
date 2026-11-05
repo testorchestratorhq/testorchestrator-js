@@ -1,0 +1,41 @@
+name: release
+
+# Publishes both packages to npm with provenance. Manual only, never on push.
+#
+# npm provenance needs a GitHub-hosted runner (it is not available on self-hosted runners), so this one job
+# is hosted. Run it only once the repository is public (hosted minutes are free for public repositories)
+# and the @testorchestrator npm organisation and the NPM_TOKEN secret exist. Until then publish by hand:
+# see CONTRIBUTING.md › Releasing.
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'npm publish --dry-run (nothing is published)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  id-token: write # npm provenance
+
+jobs:
+  publish:
+    if: ${{ github.event.repository.visibility == 'public' }}
+    runs-on: ubuntu-24.04
+    environment: npm
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm run check
+      - name: Publish @testorchestrator/results-schema
+        run: npm publish --workspace @testorchestrator/results-schema --access public --provenance ${{ inputs.dry-run && '--dry-run' || '' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish @testorchestrator/playwright-reporter
+        run: npm publish --workspace @testorchestrator/playwright-reporter --access public --provenance ${{ inputs.dry-run && '--dry-run' || '' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

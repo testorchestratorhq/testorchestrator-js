@@ -1,0 +1,1070 @@
+{
+  "config": {
+    "argv": [
+      "C:\\ci\\node.exe",
+      "C:\\ci\\workspace\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\ci\\workspace\\playwright.config.ts",
+    "rootDir": "/ci/workspace/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/ci/workspace/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/ci/workspace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 5000
+      },
+      {
+        "outputDir": "/ci/workspace/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/ci/workspace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 5000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\ci\\workspace\\test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "chromium",
+        "testDir": "C:\\ci\\workspace\\tests",
+        "snapshotDir": "C:\\ci\\workspace\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 5000,
+        "use": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\ci\\workspace\\test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "firefox",
+        "testDir": "C:\\ci\\workspace\\tests",
+        "snapshotDir": "C:\\ci\\workspace\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 5000,
+        "use": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "checkout.spec.ts",
+      "file": "checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "C-2 login rejects a bad password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 5000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-27T15:54:00.190Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "25ab1bfc84c57e3e3a45-ad2c1a8a94ddb2bab29b",
+          "file": "checkout.spec.ts",
+          "line": 23,
+          "column": 5
+        },
+        {
+          "title": "search answers within the budget",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 304,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-27T15:54:00.203Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-search-answers-within-the-budget-chromium\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 306,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-27T15:54:01.164Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-search-answers-within-the-budget-chromium-retry1\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "25ab1bfc84c57e3e3a45-d1aa45a133e35d624f91",
+          "file": "checkout.spec.ts",
+          "line": 28,
+          "column": 5
+        },
+        {
+          "title": "C-2 login rejects a bad password",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 5000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 7,
+                  "error": {
+                    "message": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m",
+                    "stack": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:25:76",
+                    "location": {
+                      "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                      "column": 76,
+                      "line": 25
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 23 |\u001b[39m test(\u001b[32m'C-2 login rejects a bad password'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m 24 |\u001b[39m   \u001b[90m// Parametrised over the two projects: passes on chromium, fails on firefox.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m   expect(testInfo\u001b[33m.\u001b[39mproject\u001b[33m.\u001b[39mname\u001b[33m,\u001b[39m \u001b[32m'firefox autofill keeps the old password'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m'chromium'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m test(\u001b[32m'search answers within the budget'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 76,
+                        "line": 25
+                      },
+                      "message": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m\n\n  23 | test('C-2 login rejects a bad password', async ({}, testInfo) => {\n  24 |   // Parametrised over the two projects: passes on chromium, fails on firefox.\n> 25 |   expect(testInfo.project.name, 'firefox autofill keeps the old password').toBe('chromium');\n     |                                                                            ^\n  26 | });\n  27 |\n  28 | test('search answers within the budget', async () => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:25:76"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-27T15:54:00.153Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-C-2-login-rejects-a-bad-password-firefox\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                    "column": 76,
+                    "line": 25
+                  }
+                },
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 11,
+                  "error": {
+                    "message": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m",
+                    "stack": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:25:76",
+                    "location": {
+                      "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                      "column": 76,
+                      "line": 25
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 23 |\u001b[39m test(\u001b[32m'C-2 login rejects a bad password'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m 24 |\u001b[39m   \u001b[90m// Parametrised over the two projects: passes on chromium, fails on firefox.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m   expect(testInfo\u001b[33m.\u001b[39mproject\u001b[33m.\u001b[39mname\u001b[33m,\u001b[39m \u001b[32m'firefox autofill keeps the old password'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m'chromium'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m test(\u001b[32m'search answers within the budget'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 76,
+                        "line": 25
+                      },
+                      "message": "Error: firefox autofill keeps the old password\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"chromium\"\u001b[39m\nReceived: \u001b[31m\"firefox\"\u001b[39m\n\n  23 | test('C-2 login rejects a bad password', async ({}, testInfo) => {\n  24 |   // Parametrised over the two projects: passes on chromium, fails on firefox.\n> 25 |   expect(testInfo.project.name, 'firefox autofill keeps the old password').toBe('chromium');\n     |                                                                            ^\n  26 | });\n  27 |\n  28 | test('search answers within the budget', async () => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:25:76"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-27T15:54:00.777Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-C-2-login-rejects-a-bad-password-firefox-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                    "column": 76,
+                    "line": 25
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "25ab1bfc84c57e3e3a45-4383dd3bb133fc42c1dd",
+          "file": "checkout.spec.ts",
+          "line": 23,
+          "column": 5
+        },
+        {
+          "title": "search answers within the budget",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 309,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-27T15:54:01.446Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-search-answers-within-the-budget-firefox\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 318,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-27T15:54:02.425Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\ci\\workspace\\test-results\\checkout-search-answers-within-the-budget-firefox-retry1\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "25ab1bfc84c57e3e3a45-0b7e8b7bcdcfeb357ab0",
+          "file": "checkout.spec.ts",
+          "line": 28,
+          "column": 5
+        }
+      ],
+      "suites": [
+        {
+          "title": "checkout",
+          "file": "checkout.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "applies coupon",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [
+                    {
+                      "type": "testorchestrator",
+                      "description": "C-1",
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "line": 4,
+                        "column": 7
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:57.880Z",
+                      "annotations": [
+                        {
+                          "type": "testorchestrator",
+                          "description": "C-1",
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "line": 4,
+                            "column": 7
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-225a46afc1f9c4937334",
+              "file": "checkout.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "computes tax line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m",
+                        "stack": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 44,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m   test(\u001b[32m'computes tax line'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m testInfo\u001b[33m.\u001b[39mattach(\u001b[32m'tax-debug.txt'\u001b[39m\u001b[33m,\u001b[39m { body\u001b[33m:\u001b[39m \u001b[32m'subtotal=100 tax=19'\u001b[39m\u001b[33m,\u001b[39m contentType\u001b[33m:\u001b[39m \u001b[32m'text/plain'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     expect(\u001b[35m100\u001b[39m \u001b[33m*\u001b[39m \u001b[35m0.2\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'VAT should be 20%'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m19\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 44,
+                            "line": 10
+                          },
+                          "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n\n   8 |   test('computes tax line', async ({}, testInfo) => {\n   9 |     await testInfo.attach('tax-debug.txt', { body: 'subtotal=100 tax=19', contentType: 'text/plain' });\n> 10 |     expect(100 * 0.2, 'VAT should be 20%').toBe(19);\n     |                                            ^\n  11 |   });\n  12 |\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:57.940Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "tax-debug.txt",
+                          "contentType": "text/plain",
+                          "body": "c3VidG90YWw9MTAwIHRheD0xOQ=="
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-computes-tax-line-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 44,
+                        "line": 10
+                      }
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12,
+                      "error": {
+                        "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m",
+                        "stack": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 44,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m   test(\u001b[32m'computes tax line'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m testInfo\u001b[33m.\u001b[39mattach(\u001b[32m'tax-debug.txt'\u001b[39m\u001b[33m,\u001b[39m { body\u001b[33m:\u001b[39m \u001b[32m'subtotal=100 tax=19'\u001b[39m\u001b[33m,\u001b[39m contentType\u001b[33m:\u001b[39m \u001b[32m'text/plain'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     expect(\u001b[35m100\u001b[39m \u001b[33m*\u001b[39m \u001b[35m0.2\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'VAT should be 20%'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m19\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 44,
+                            "line": 10
+                          },
+                          "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n\n   8 |   test('computes tax line', async ({}, testInfo) => {\n   9 |     await testInfo.attach('tax-debug.txt', { body: 'subtotal=100 tax=19', contentType: 'text/plain' });\n> 10 |     expect(100 * 0.2, 'VAT should be 20%').toBe(19);\n     |                                            ^\n  11 |   });\n  12 |\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-27T15:53:58.655Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "tax-debug.txt",
+                          "contentType": "text/plain",
+                          "body": "c3VidG90YWw9MTAwIHRheD0xOQ=="
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-computes-tax-line-chromium-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 44,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-6631b256769b9754c561",
+              "file": "checkout.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "retries the payment gateway",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10,
+                      "error": {
+                        "message": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:15:69",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 69,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Flaky on purpose: fails on the first attempt, passes on the retry.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     expect(testInfo\u001b[33m.\u001b[39mretry\u001b[33m,\u001b[39m \u001b[32m'gateway answered 503 on first attempt'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   test(\u001b[32m'gift cards'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 69,
+                            "line": 15
+                          },
+                          "message": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n  14 |     // Flaky on purpose: fails on the first attempt, passes on the retry.\n> 15 |     expect(testInfo.retry, 'gateway answered 503 on first attempt').toBeGreaterThan(0);\n     |                                                                     ^\n  16 |   });\n  17 |\n  18 |   test('gift cards', async () => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:15:69"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:59.360Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-retries-the-payment-gateway-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 69,
+                        "line": 15
+                      }
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-27T15:54:00.120Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-481ca5799a17e71adf1f",
+              "file": "checkout.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "gift cards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "gift cards are not live yet",
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "line": 19,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:54:00.177Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "gift cards are not live yet",
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "line": 19,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-949ab003844fd26d4266",
+              "file": "checkout.spec.ts",
+              "line": 18,
+              "column": 7
+            },
+            {
+              "title": "applies coupon",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [
+                    {
+                      "type": "testorchestrator",
+                      "description": "C-1",
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "line": 4,
+                        "column": 7
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:57.875Z",
+                      "annotations": [
+                        {
+                          "type": "testorchestrator",
+                          "description": "C-1",
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "line": 4,
+                            "column": 7
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-a192c02c750180f76ddf",
+              "file": "checkout.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "computes tax line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m",
+                        "stack": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 44,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m   test(\u001b[32m'computes tax line'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m testInfo\u001b[33m.\u001b[39mattach(\u001b[32m'tax-debug.txt'\u001b[39m\u001b[33m,\u001b[39m { body\u001b[33m:\u001b[39m \u001b[32m'subtotal=100 tax=19'\u001b[39m\u001b[33m,\u001b[39m contentType\u001b[33m:\u001b[39m \u001b[32m'text/plain'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     expect(\u001b[35m100\u001b[39m \u001b[33m*\u001b[39m \u001b[35m0.2\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'VAT should be 20%'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m19\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 44,
+                            "line": 10
+                          },
+                          "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n\n   8 |   test('computes tax line', async ({}, testInfo) => {\n   9 |     await testInfo.attach('tax-debug.txt', { body: 'subtotal=100 tax=19', contentType: 'text/plain' });\n> 10 |     expect(100 * 0.2, 'VAT should be 20%').toBe(19);\n     |                                            ^\n  11 |   });\n  12 |\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:57.922Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "tax-debug.txt",
+                          "contentType": "text/plain",
+                          "body": "c3VidG90YWw9MTAwIHRheD0xOQ=="
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-computes-tax-line-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 44,
+                        "line": 10
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12,
+                      "error": {
+                        "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m",
+                        "stack": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 44,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m   test(\u001b[32m'computes tax line'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m testInfo\u001b[33m.\u001b[39mattach(\u001b[32m'tax-debug.txt'\u001b[39m\u001b[33m,\u001b[39m { body\u001b[33m:\u001b[39m \u001b[32m'subtotal=100 tax=19'\u001b[39m\u001b[33m,\u001b[39m contentType\u001b[33m:\u001b[39m \u001b[32m'text/plain'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     expect(\u001b[35m100\u001b[39m \u001b[33m*\u001b[39m \u001b[35m0.2\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'VAT should be 20%'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m19\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 44,
+                            "line": 10
+                          },
+                          "message": "Error: VAT should be 20%\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m19\u001b[39m\nReceived: \u001b[31m20\u001b[39m\n\n   8 |   test('computes tax line', async ({}, testInfo) => {\n   9 |     await testInfo.attach('tax-debug.txt', { body: 'subtotal=100 tax=19', contentType: 'text/plain' });\n> 10 |     expect(100 * 0.2, 'VAT should be 20%').toBe(19);\n     |                                            ^\n  11 |   });\n  12 |\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:10:44"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-27T15:53:58.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "tax-debug.txt",
+                          "contentType": "text/plain",
+                          "body": "c3VidG90YWw9MTAwIHRheD0xOQ=="
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-computes-tax-line-firefox-retry1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 44,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-ebf095adeef17d18d85e",
+              "file": "checkout.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "retries the payment gateway",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9,
+                      "error": {
+                        "message": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:15:69",
+                        "location": {
+                          "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                          "column": 69,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 13 |\u001b[39m   test(\u001b[32m'retries the payment gateway'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({}\u001b[33m,\u001b[39m testInfo) \u001b[33m=>\u001b[39m {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Flaky on purpose: fails on the first attempt, passes on the retry.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     expect(testInfo\u001b[33m.\u001b[39mretry\u001b[33m,\u001b[39m \u001b[32m'gateway answered 503 on first attempt'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   test(\u001b[32m'gift cards'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "column": 69,
+                            "line": 15
+                          },
+                          "message": "Error: gateway answered 503 on first attempt\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  13 |   test('retries the payment gateway', async ({}, testInfo) => {\n  14 |     // Flaky on purpose: fails on the first attempt, passes on the retry.\n> 15 |     expect(testInfo.retry, 'gateway answered 503 on first attempt').toBeGreaterThan(0);\n     |                                                                     ^\n  16 |   });\n  17 |\n  18 |   test('gift cards', async () => {\n    at C:\\ci\\workspace\\tests\\checkout.spec.ts:15:69"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:53:59.340Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\ci\\workspace\\test-results\\checkout-checkout-retries-the-payment-gateway-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "column": 69,
+                        "line": 15
+                      }
+                    },
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-27T15:54:00.091Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-34db74510fa201be42f8",
+              "file": "checkout.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "gift cards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 5000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "gift cards are not live yet",
+                      "location": {
+                        "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                        "line": 19,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-27T15:54:00.141Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "gift cards are not live yet",
+                          "location": {
+                            "file": "C:\\ci\\workspace\\tests\\checkout.spec.ts",
+                            "line": 19,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-4555cb2e9f312ed5ce2e",
+              "file": "checkout.spec.ts",
+              "line": 18,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-27T15:53:57.173Z",
+    "duration": 5645.030000000001,
+    "expected": 3,
+    "skipped": 2,
+    "unexpected": 5,
+    "flaky": 2
+  }
+}

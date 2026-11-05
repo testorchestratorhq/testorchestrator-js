@@ -1,0 +1,86 @@
+name: ci
+
+# Runners are registered per repository in this organisation and no job may use a hosted
+# `ubuntu-latest` runner (context/ci-runners.md in testorchestrator-app). Until a self-hosted runner is
+# registered for this repository (or it is public), these jobs queue and do not run.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: [self-hosted, Linux, X64]
+    env:
+      OTLP_METRICS_ENABLED: 'false'
+      APP_ENV: ci
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Generated validator and types are up to date
+        run: npm run check:generated --workspace @testorchestrator/results-schema
+      - run: npm run build
+      - run: npm run lint
+      - run: npm run typecheck
+      - name: Unit tests with coverage (lines >= 90%, branches >= 80%)
+        run: npm run coverage
+      - name: Packed files (no fixtures, no secrets)
+        run: npm pack --dry-run --workspaces
+      - run: npm audit --audit-level=low
+
+  node-compat:
+    needs: check
+    runs-on: [self-hosted, Linux, X64]
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Build the packages and compile the tests (Node 22)
+        run: |
+          npm ci && npm run build
+          npx tsc -p packages/results-schema/tsconfig.test.json
+          npx tsc -p packages/playwright-reporter/tsconfig.test.json
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Run every unit test on Node ${{ matrix.node }}
+        # file list expanded by the shell: Node 18 and 20 do not take glob patterns
+        run: |
+          node --version
+          node --test packages/results-schema/build/test/*.test.js
+          node --test packages/playwright-reporter/build/test/*.test.js
+          node packages/results-schema/dist/cli.js packages/results-schema/test/fixtures/parser/to-results.json
+
+  e2e:
+    needs: check
+    # Uploads to a TestOrchestrator stack: set the TO_E2E_API_KEY secret (a service key of a test
+    # workspace, never production) and the TO_E2E_BASE_URL variable to enable it.
+    if: ${{ vars.TO_E2E_BASE_URL != '' }}
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci && npm run build
+      - name: Fresh project, tarball install, real Playwright run, upload
+        run: node e2e/run.mjs
+        env:
+          TO_API_KEY: ${{ secrets.TO_E2E_API_KEY }}
+          TO_BASE_URL: ${{ vars.TO_E2E_BASE_URL }}
+          TO_RUN_KEY: ci-e2e-${{ github.run_id }}-${{ github.run_attempt }}

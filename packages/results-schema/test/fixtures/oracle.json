@@ -1,0 +1,1713 @@
+{
+ "generatedBy": "ToResultsJsonParser (testorchestrator-backend develop ab8548732b3a7769265a9d2356fead92473661cd), ParseLimits.DEFAULT, via scripts/oracle/ParserProbe.java",
+ "verdicts": [
+  {
+   "file": "deep-10000.json",
+   "accepted": false,
+   "location": "/suites/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0 (line 1, column 75)",
+   "message": "The file is not valid JSON: Document nesting depth (65) exceeds the maximum allowed (64, from `StreamReadConstraints.getMaxNestingDepth()`)",
+   "dir": "parser"
+  },
+  {
+   "file": "playwright-report.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-1.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-2.json",
+   "accepted": false,
+   "location": "/results",
+   "message": "\"results\" must be an array.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-3.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" is required.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-4.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-5.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-6.json",
+   "accepted": false,
+   "location": "/results/0/params/a~1b",
+   "message": "A parameter value must be a string, number or boolean.",
+   "dir": "parser"
+  },
+  {
+   "file": "refusal-7.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "parser"
+  },
+  {
+   "file": "to-results.json",
+   "accepted": true,
+   "results": 3,
+   "warnings": 0,
+   "dir": "parser"
+  },
+  {
+   "file": "bad-artifact-attachment-id-float.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/attachment_id",
+   "message": "\"attachment_id\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-http.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-media-type-too-long.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/media_type",
+   "message": "\"media_type\" must be at most 100 characters.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-name-too-long.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/name",
+   "message": "\"name\" must be at most 255 characters.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-no-host.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-no-name.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/name",
+   "message": "\"name\" is required.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-artifact-url-space.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-101.json",
+   "accepted": false,
+   "location": "/results/0/attempts",
+   "message": "\"attempts\" must be an array of at most 100 items.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-item-no-outcome.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0/outcome",
+   "message": "\"outcome\" is required.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-item-not-object.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0",
+   "message": "An attempt must be an object.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-not-array.json",
+   "accepted": false,
+   "location": "/results/0/attempts",
+   "message": "\"attempts\" must be an array of at most 100 items.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-total-below-attempt.json",
+   "accepted": false,
+   "location": "/results/0/attempts_total",
+   "message": "\"attempts_total\" must be at least \"attempt\".",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-attempts-total-zero.json",
+   "accepted": false,
+   "location": "/results/0/attempts_total",
+   "message": "\"attempts_total\" must be at least \"attempt\".",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-comment.json",
+   "accepted": false,
+   "location": "/version (line 1, column 14)",
+   "message": "The file is not valid JSON: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-control-char-in-string.json",
+   "accepted": false,
+   "location": "/results/0/test_id (line 1, column 38)",
+   "message": "The file is not valid JSON: Illegal unquoted character ((CTRL-CHAR, code 9)): has to be escaped using backslash to be included in string value",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-depth-65.json",
+   "accepted": false,
+   "location": "/x/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0 (line 1, column 95)",
+   "message": "The file is not valid JSON: Document nesting depth (65) exceeds the maximum allowed (64, from `StreamReadConstraints.getMaxNestingDepth()`)",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-duration-beyond-long.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-duration-exponent.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-duration-float.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-duration-negative.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-duration-string.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-environment-too-long.json",
+   "accepted": false,
+   "location": "/results/0/environment",
+   "message": "\"environment\" must be at most 120 characters.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-failure-message-number.json",
+   "accepted": false,
+   "location": "/results/0/failure/message",
+   "message": "\"message\" must be a string.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-failure-string.json",
+   "accepted": false,
+   "location": "/results/0/failure",
+   "message": "\"failure\" must be an object.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-leading-zero.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms (line 1, column 86)",
+   "message": "The file is not valid JSON: Invalid numeric value: Leading zeroes not allowed",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-location-line-negative.json",
+   "accepted": false,
+   "location": "/results/0/location/line",
+   "message": "\"line\" must be a non-negative integer.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-location-string.json",
+   "accepted": false,
+   "location": "/results/0/location",
+   "message": "\"location\" must be an object.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-match-hints-101.json",
+   "accepted": false,
+   "location": "/results/0/match_hints",
+   "message": "\"match_hints\" must be an array of at most 100 strings.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-not-json.json",
+   "accepted": false,
+   "location": "/results (line 1, column 28)",
+   "message": "The file is not valid JSON: Unexpected close marker '}': expected ']' (for Array starting at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #UNKNOWN])",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-outcome-unknown.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-outcome-upper.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-output-object.json",
+   "accepted": false,
+   "location": "/results/0/output",
+   "message": "\"output\" must be a string.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-params-51.json",
+   "accepted": false,
+   "location": "/results/0/params",
+   "message": "\"params\" must be an object with at most 50 entries.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-params-array.json",
+   "accepted": false,
+   "location": "/results/0/params",
+   "message": "\"params\" must be an object with at most 50 entries.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-params-nested.json",
+   "accepted": false,
+   "location": "/results/0/params/a~1b",
+   "message": "A parameter value must be a string, number or boolean.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-params-null-value.json",
+   "accepted": false,
+   "location": "/results/0/params/a",
+   "message": "A parameter value must be a string, number or boolean.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-result-not-object.json",
+   "accepted": false,
+   "location": "/results/0",
+   "message": "A result must be an object.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-results-object.json",
+   "accepted": false,
+   "location": "/results",
+   "message": "\"results\" must be an array.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-root-array.json",
+   "accepted": false,
+   "location": "/",
+   "message": "The document must be a JSON object.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-date-only.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-feb-30.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-garbage.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-hour-24.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-space.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-started-at-too-long.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be at most 64 characters.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-tags-item-number.json",
+   "accepted": false,
+   "location": "/results/0/tags/1",
+   "message": "\"tags\" items must be strings.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-tags-not-array.json",
+   "accepted": false,
+   "location": "/results/0/tags",
+   "message": "\"tags\" must be an array of at most 100 strings.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-test-id-blank.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" is required.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-test-id-missing.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" is required.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-test-id-number.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be a string.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-test-id-too-long.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be at most 1000 characters.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-title-null.json",
+   "accepted": false,
+   "location": "/results/0/title",
+   "message": "\"title\" is required.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-trailing-comma.json",
+   "accepted": false,
+   "location": "/results (line 1, column 27)",
+   "message": "The file is not valid JSON: Unexpected character ('}' (code 125)): was expecting double-quote to start property name",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-two-values.json",
+   "accepted": false,
+   "location": "/ (line 1, column 28)",
+   "message": "The file is not valid JSON: Trailing token (`JsonToken.START_OBJECT`) found after value (bound as `tools.jackson.databind.JsonNode`): not allowed as per `DeserializationFeature.FAIL_ON_TRAILING_TOKENS`",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-version-2.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-version-float.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-version-missing.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "corpus"
+  },
+  {
+   "file": "bad-version-string.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-5-digit-year-no-sign.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-fraction-10.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-fraction-comma.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-fraction-empty.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-lower-t-upper-z.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-negative-year.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-18.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-19.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-colon-seconds.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-compact-seconds.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-compact.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-hours.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-minus-zero.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-offset-utc-word.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-plus-4-digit-year.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-plus-5-digit-year.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-year-10-digits.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "corpus"
+  },
+  {
+   "file": "date-year-max.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "date-year-zero.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-all-fields.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-attempt-huge-clamped.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-attempt-zero-clamped.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-attempts-item-attempt-zero.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-blank-optional-strings.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-bom.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-depth-64.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-duplicate-key-last-wins.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-empty-file.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-empty-results.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-leap-day.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-line-zero.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-long-location-file.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-long-output-capped.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-max-length-test-id.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-minimal.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-nbsp-test-id.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-negative-zero-duration.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-nulls-everywhere.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-params-50.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-lowercase.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-nanos.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-no-offset.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-no-seconds.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-offset-seconds.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-started-at-padded.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-unknown-properties.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-url-ipv4.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-url-uppercase-scheme.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "ok-whitespace-file.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "corpus"
+  },
+  {
+   "file": "trim-attachment-id-zero.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "trim-blank-tag-counted.json",
+   "accepted": false,
+   "location": "/results/0/tags",
+   "message": "\"tags\" must be an array of at most 100 strings.",
+   "dir": "corpus"
+  },
+  {
+   "file": "trim-environment-120-plus-spaces.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "trim-name-255-plus-tab.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "trim-outcome-newline.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "corpus"
+  },
+  {
+   "file": "001-minimal.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "002-empty.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "003-ws-only.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "004-bom-valid.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "005-bom-ws.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "006-root-array.json",
+   "accepted": false,
+   "location": "/",
+   "message": "The document must be a JSON object.",
+   "dir": "gate"
+  },
+  {
+   "file": "007-version-1.0.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "gate"
+  },
+  {
+   "file": "008-version-string.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "gate"
+  },
+  {
+   "file": "009-version-2.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "gate"
+  },
+  {
+   "file": "010-version-2pow32plus1.json",
+   "accepted": false,
+   "crash": "tools.jackson.databind.exc.JsonNodeException: 'LongNode' method `asInt()` cannot convert value 4294967297 to `int`: value not in 32-bit `int` range",
+   "dir": "gate"
+  },
+  {
+   "file": "011-no-results.json",
+   "accepted": false,
+   "location": "/results",
+   "message": "\"results\" must be an array.",
+   "dir": "gate"
+  },
+  {
+   "file": "012-results-object.json",
+   "accepted": false,
+   "location": "/results",
+   "message": "\"results\" must be an array.",
+   "dir": "gate"
+  },
+  {
+   "file": "013-results-empty.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "014-result-string.json",
+   "accepted": false,
+   "location": "/results/0",
+   "message": "A result must be an object.",
+   "dir": "gate"
+  },
+  {
+   "file": "015-testid-1000.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "016-testid-1001.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be at most 1000 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "017-testid-1000-plus-2-trailing-spaces.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "018-testid-blank.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "019-testid-null.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "020-testid-number.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be a string.",
+   "dir": "gate"
+  },
+  {
+   "file": "021-testid-nbsp.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "022-testid-figure-space.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "023-testid-ideographic-space.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "024-testid-600-emoji.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be at most 1000 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "025-testid-500-emoji.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "026-outcome-upper.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "gate"
+  },
+  {
+   "file": "027-outcome-padded.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "028-outcome-flaky.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "029-outcome-33chars.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be at most 32 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "030-duration-neg.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "031-duration-5.0.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "032-duration-1e3.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "033-duration-longmax.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "034-duration-longmax-plus1.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "035-duration-0.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "036-duration-null.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "037-duration-string.json",
+   "accepted": false,
+   "location": "/results/0/duration_ms",
+   "message": "\"duration_ms\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "038-attempt-0.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "039-attempt2-total1.json",
+   "accepted": false,
+   "location": "/results/0/attempts_total",
+   "message": "\"attempts_total\" must be at least \"attempt\".",
+   "dir": "gate"
+  },
+  {
+   "file": "040-attempt2000-total1500.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "041-total-0.json",
+   "accepted": false,
+   "location": "/results/0/attempts_total",
+   "message": "\"attempts_total\" must be at least \"attempt\".",
+   "dir": "gate"
+  },
+  {
+   "file": "042-attempts-101.json",
+   "accepted": false,
+   "location": "/results/0/attempts",
+   "message": "\"attempts\" must be an array of at most 100 items.",
+   "dir": "gate"
+  },
+  {
+   "file": "043-attempts-string-item.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0",
+   "message": "An attempt must be an object.",
+   "dir": "gate"
+  },
+  {
+   "file": "044-attempts-bad-outcome.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0/outcome",
+   "message": "Unknown outcome.",
+   "dir": "gate"
+  },
+  {
+   "file": "045-attempts-empty-obj.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0/outcome",
+   "message": "\"outcome\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "046-failure-string.json",
+   "accepted": false,
+   "location": "/results/0/failure",
+   "message": "\"failure\" must be an object.",
+   "dir": "gate"
+  },
+  {
+   "file": "047-failure-type-number.json",
+   "accepted": false,
+   "location": "/results/0/failure/type",
+   "message": "\"type\" must be a string.",
+   "dir": "gate"
+  },
+  {
+   "file": "048-failure-null.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "049-artifact-http.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "050-artifact-url-space.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "051-artifact-url-underscore-host.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "052-artifact-url-upper-scheme.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "053-artifact-url-ipv4-port.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "054-artifact-url-ipv6.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "055-artifact-url-userinfo.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "056-artifact-url-numeric-tld.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "057-artifact-url-padded.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "058-artifact-url-bad-escape.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "059-artifact-url-unicode-path.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "060-artifact-url-double-hash.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/url",
+   "message": "An artifact url must be an https URL.",
+   "dir": "gate"
+  },
+  {
+   "file": "061-artifact-url-blank.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "062-artifact-no-name.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/name",
+   "message": "\"name\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "063-artifact-name-256.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/name",
+   "message": "\"name\" must be at most 255 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "064-artifact-attachment-0.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "065-artifact-attachment-neg.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/attachment_id",
+   "message": "\"attachment_id\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "066-params-51.json",
+   "accepted": false,
+   "location": "/results/0/params",
+   "message": "\"params\" must be an object with at most 50 entries.",
+   "dir": "gate"
+  },
+  {
+   "file": "067-params-null-value-escaped-key.json",
+   "accepted": false,
+   "location": "/results/0/params/a~1b~0c",
+   "message": "A parameter value must be a string, number or boolean.",
+   "dir": "gate"
+  },
+  {
+   "file": "068-params-browser.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "069-params-array.json",
+   "accepted": false,
+   "location": "/results/0/params",
+   "message": "\"params\" must be an object with at most 50 entries.",
+   "dir": "gate"
+  },
+  {
+   "file": "070-tags-number.json",
+   "accepted": false,
+   "location": "/results/0/tags/0",
+   "message": "\"tags\" items must be strings.",
+   "dir": "gate"
+  },
+  {
+   "file": "071-tags-101.json",
+   "accepted": false,
+   "location": "/results/0/tags",
+   "message": "\"tags\" must be an array of at most 100 strings.",
+   "dir": "gate"
+  },
+  {
+   "file": "072-hints-blank-item.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "073-location-line-float.json",
+   "accepted": false,
+   "location": "/results/0/location/line",
+   "message": "\"line\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "074-location-string.json",
+   "accepted": false,
+   "location": "/results/0/location",
+   "message": "\"location\" must be an object.",
+   "dir": "gate"
+  },
+  {
+   "file": "075-env-121.json",
+   "accepted": false,
+   "location": "/results/0/environment",
+   "message": "\"environment\" must be at most 120 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "076-env-120.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "077-started-feb30.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "gate"
+  },
+  {
+   "file": "078-started-no-seconds.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "079-started-nanos-offset.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "080-started-space-sep.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "gate"
+  },
+  {
+   "file": "081-started-hour24.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be an ISO-8601 date-time.",
+   "dir": "gate"
+  },
+  {
+   "file": "082-started-lowercase.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "083-started-plus-5digit-year.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "084-started-offset-hours-only.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "085-started-65chars.json",
+   "accepted": false,
+   "location": "/results/0/started_at",
+   "message": "\"started_at\" must be at most 64 characters.",
+   "dir": "gate"
+  },
+  {
+   "file": "086-output-number.json",
+   "accepted": false,
+   "location": "/results/0/output",
+   "message": "\"output\" must be a string.",
+   "dir": "gate"
+  },
+  {
+   "file": "087-unknown-fields.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "088-dup-version-last-wins.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "089-dup-testid-second-invalid.json",
+   "accepted": false,
+   "location": "/results/0/test_id",
+   "message": "\"test_id\" must be a string.",
+   "dir": "gate"
+  },
+  {
+   "file": "090-trailing-comma.json",
+   "accepted": false,
+   "location": "/results/0/outcome (line 1, column 71)",
+   "message": "The file is not valid JSON: Unexpected character ('}' (code 125)): was expecting double-quote to start property name",
+   "dir": "gate"
+  },
+  {
+   "file": "091-two-values.json",
+   "accepted": false,
+   "location": "/ (line 1, column 28)",
+   "message": "The file is not valid JSON: Trailing token (`JsonToken.START_OBJECT`) found after value (bound as `tools.jackson.databind.JsonNode`): not allowed as per `DeserializationFeature.FAIL_ON_TRAILING_TOKENS`",
+   "dir": "gate"
+  },
+  {
+   "file": "092-depth-64-total.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "093-depth-65-total.json",
+   "accepted": false,
+   "location": "/x/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a (line 1, column 347)",
+   "message": "The file is not valid JSON: Document nesting depth (65) exceeds the maximum allowed (64, from `StreamReadConstraints.getMaxNestingDepth()`)",
+   "dir": "gate"
+  },
+  {
+   "file": "094-number-101-digits.json",
+   "accepted": false,
+   "location": "/x (line 1, column 132)",
+   "message": "The file is not valid JSON: Number value length (101) exceeds the maximum allowed (100, from `StreamReadConstraints.getMaxNumberLength()`)",
+   "dir": "gate"
+  },
+  {
+   "file": "095-number-100-digits.json",
+   "accepted": true,
+   "results": 0,
+   "warnings": 1,
+   "dir": "gate"
+  },
+  {
+   "file": "096-lone-surrogate-title.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "097-invalid-utf8.json",
+   "accepted": false,
+   "location": "/results/0/title (line 1, column 51)",
+   "message": "The file is not valid JSON: Invalid UTF-8 middle byte 0x28",
+   "dir": "gate"
+  },
+  {
+   "file": "098-results-20001.json",
+   "accepted": false,
+   "location": "/results",
+   "message": "The file holds 20001 results; one upload may carry at most 20000.",
+   "tooMany": true,
+   "dir": "gate"
+  },
+  {
+   "file": "099-results-20000.json",
+   "accepted": true,
+   "results": 20000,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "100-nan.json",
+   "accepted": false,
+   "location": "/x (line 1, column 34)",
+   "message": "The file is not valid JSON: Non-standard token 'NaN': enable `JsonReadFeature.ALLOW_NON_NUMERIC_NUMBERS` to allow",
+   "dir": "gate"
+  },
+  {
+   "file": "101-raw-control-char.json",
+   "accepted": false,
+   "location": "/results/0/test_id (line 1, column 38)",
+   "message": "The file is not valid JSON: Illegal unquoted character ((CTRL-CHAR, code 1)): has to be escaped using backslash to be included in string value",
+   "dir": "gate"
+  },
+  {
+   "file": "102-bom-plus-65533-spaces.json",
+   "accepted": false,
+   "location": "/",
+   "message": "The document must be a JSON object.",
+   "dir": "gate"
+  },
+  {
+   "file": "103-ws-65536.json",
+   "accepted": false,
+   "location": "/",
+   "message": "The document must be a JSON object.",
+   "dir": "gate"
+  },
+  {
+   "file": "104-attempt-outcome-padded.json",
+   "accepted": false,
+   "location": "/results/0/attempts/0/outcome",
+   "message": "Unknown outcome.",
+   "dir": "gate"
+  },
+  {
+   "file": "105-env-120-plus-padding.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "106-artifact-name-blank.json",
+   "accepted": false,
+   "location": "/results/0/artifacts/0/name",
+   "message": "\"name\" is required.",
+   "dir": "gate"
+  },
+  {
+   "file": "107-params-key-200.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "108-version-negzero.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "gate"
+  },
+  {
+   "file": "109-version-1e0.json",
+   "accepted": false,
+   "location": "/version",
+   "message": "\"version\" must be 1.",
+   "dir": "gate"
+  },
+  {
+   "file": "110-all-optional-null.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "111-attempts_total-without-attempt.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "112-location-line-neg.json",
+   "accepted": false,
+   "location": "/results/0/location/line",
+   "message": "\"line\" must be a non-negative integer.",
+   "dir": "gate"
+  },
+  {
+   "file": "113-startedat-padded.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "114-startedat-blank.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "115-leading-zero.json",
+   "accepted": false,
+   "location": "/x (line 1, column 32)",
+   "message": "The file is not valid JSON: Invalid numeric value: Leading zeroes not allowed",
+   "dir": "gate"
+  },
+  {
+   "file": "116-comment.json",
+   "accepted": false,
+   "location": "/version (line 1, column 14)",
+   "message": "The file is not valid JSON: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)",
+   "dir": "gate"
+  },
+  {
+   "file": "117-outcome-tab-padded.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "118-outcome-number.json",
+   "accepted": false,
+   "location": "/results/0/outcome",
+   "message": "\"outcome\" must be a string.",
+   "dir": "gate"
+  },
+  {
+   "file": "119-results-item-null.json",
+   "accepted": false,
+   "location": "/results/0",
+   "message": "A result must be an object.",
+   "dir": "gate"
+  },
+  {
+   "file": "120-testid-1000-plus-ideographic.json",
+   "accepted": true,
+   "results": 1,
+   "warnings": 0,
+   "dir": "gate"
+  },
+  {
+   "file": "121-second-result-bad.json",
+   "accepted": false,
+   "location": "/results/1/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "gate"
+  },
+  {
+   "file": "122-eleventh-result-bad.json",
+   "accepted": false,
+   "location": "/results/2/outcome",
+   "message": "\"outcome\" must be one of passed, failed, skipped, errored, timed_out, flaky_passed, inconclusive.",
+   "dir": "gate"
+  }
+ ]
+}

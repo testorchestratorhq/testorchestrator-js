@@ -1,0 +1,38 @@
+{
+  "name": "testorchestrator-js",
+  "private": true,
+  "description": "TestOrchestrator automation kit: the to-results.json schema and validator, and the Playwright reporter.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/results-schema",
+    "packages/playwright-reporter"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test": "npm run test --workspaces",
+    "coverage": "npm run coverage --workspaces",
+    "pack:dry": "npm pack --dry-run --workspaces",
+    "e2e": "node e2e/run.mjs",
+    "check": "npm run build && npm run lint && npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^20.19.0",
+    "ajv": "8.20.0",
+    "eslint": "^10.14.0",
+    "json-schema-to-typescript": "16.0.0",
+    "prettier": "3.9.10",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.0"
+  },
+  "overrides": {
+    "minimatch": "^11.0.4"
+  }
+}

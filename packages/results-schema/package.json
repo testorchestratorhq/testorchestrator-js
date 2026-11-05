@@ -1,0 +1,69 @@
+{
+  "name": "@testorchestrator/results-schema",
+  "version": "1.0.0",
+  "description": "JSON Schema, TypeScript types and a validator CLI for TestOrchestrator's to-results.json test-results format. Check a results file in CI before you upload it.",
+  "keywords": [
+    "testorchestrator",
+    "test-results",
+    "json-schema",
+    "validator",
+    "test-management",
+    "test-reporting",
+    "ci",
+    "qa",
+    "junit",
+    "playwright",
+    "automation"
+  ],
+  "homepage": "https://testorchestrator.com/docs/api-keys/ci-integrations#results-schema",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testorchestratorhq/testorchestrator-js.git",
+    "directory": "packages/results-schema"
+  },
+  "bugs": {
+    "url": "https://github.com/testorchestratorhq/testorchestrator-js/issues"
+  },
+  "license": "MIT",
+  "author": "Test Orchestrator Ltd (https://testorchestrator.com)",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema.json": "./schemas/to-results.v1.json",
+    "./schemas/to-results.v1.json": "./schemas/to-results.v1.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "to-results-validate": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "schemas/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "generate": "node scripts/build-generated.mjs",
+    "check:generated": "node scripts/build-generated.mjs --check",
+    "build": "npm run generate && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"build/test/*.test.js\"",
+    "coverage": "tsc -p tsconfig.test.json && node --test --experimental-test-coverage --test-coverage-include=\"build/src/**/*.js\" --test-coverage-exclude=\"build/src/generated/**\" --test-coverage-lines=90 --test-coverage-branches=80 \"build/test/*.test.js\"",
+    "corpus": "node scripts/make-corpus.mjs",
+    "prepack": "npm run build"
+  }
+}

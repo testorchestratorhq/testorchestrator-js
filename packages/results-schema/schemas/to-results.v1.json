@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://testorchestrator.com/schemas/to-results.v1.json",
+  "title": "ToResultsDocument",
+  "description": "TestOrchestrator results format (to-results-json), version 1. Upload it to POST /api/v1/ingest/results with format=to-results-json. One document is one upload. Derived from the server's parser (ToResultsJsonParser): a value this schema refuses is refused by the upload with 400 RESULTS_FILE_INVALID and a JSON pointer to it. Unknown properties are ignored, so later minor additions stay compatible; a breaking change becomes to-results.v2.json. An empty or whitespace-only file is also accepted by the server (zero results, used to close a run).",
+  "type": "object",
+  "required": ["version", "results"],
+  "properties": {
+    "version": {
+      "const": 1,
+      "description": "Format version. Must be the integer 1."
+    },
+    "results": {
+      "type": "array",
+      "maxItems": 20000,
+      "description": "One entry per test execution. At most 20 000 per upload (more is 413 TOO_MANY_RESULTS); split a larger suite by shard and upload each part with the same run_key.",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    }
+  },
+  "$defs": {
+    "outcome": {
+      "title": "Outcome",
+      "type": "string",
+      "enum": ["passed", "failed", "skipped", "errored", "timed_out", "flaky_passed", "inconclusive"],
+      "description": "Canonical outcome, lower case. The workspace maps each outcome to one of its statuses (Settings > Statuses)."
+    },
+    "result": {
+      "title": "ToResult",
+      "type": "object",
+      "required": ["test_id", "title", "outcome"],
+      "description": "One test execution. The server strips leading and trailing whitespace from every string except params values before checking it (so limits apply to the trimmed value), and reads a blank or null optional value as absent. This schema describes the trimmed, canonical form.",
+      "properties": {
+        "test_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "pattern": "[^\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]",
+          "description": "Stable identity of the automated test within the project; never a line number. Matched exactly (case-sensitive, trimmed) against a case's automation key. Keep parameters out of it and put them in params."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "pattern": "[^\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]",
+          "description": "Human name of the test. Scanned for C-123 case references; compared with case titles only when the project turned on Match by title."
+        },
+        "outcome": {
+          "$ref": "#/$defs/outcome"
+        },
+        "duration_ms": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Wall time in milliseconds."
+        },
+        "started_at": {
+          "type": ["string", "null"],
+          "maxLength": 64,
+          "pattern": "^[\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]*(?:(?:\\d{4}|-\\d{4}|[+-]\\d{5,9})-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d{0,9})?)?(?:[Zz]|[+-]\\d{2}(?::\\d{2}(?::\\d{2})?)?)?)?[\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]*$",
+          "description": "When the test started, ISO-8601 as java.time reads it: 2026-10-27T09:15:02Z; seconds and up to 9 fraction digits optional; offset Z, +01, +01:00 or +01:00:00 (a value without an offset is read as UTC); a year beyond 9999 needs a sign (+12026). Stored as reported; ordering uses the server's receive time."
+        },
+        "attempt": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "The attempt this entry records, 1-based (default 1). 0 is read as 1 and values above 1000 as 1000."
+        },
+        "attempts_total": {
+          "type": ["integer", "null"],
+          "minimum": 1,
+          "description": "How many attempts were made (default: attempt). Must be at least attempt. Values above 1000 are read as 1000."
+        },
+        "attempts": {
+          "type": ["array", "null"],
+          "maxItems": 100,
+          "description": "Retry history, oldest first.",
+          "items": {
+            "$ref": "#/$defs/attempt"
+          }
+        },
+        "failure": {
+          "$ref": "#/$defs/failure"
+        },
+        "output": {
+          "type": ["string", "null"],
+          "description": "stdout / stderr excerpt. Kept up to 4 000 characters; ANSI colour codes are removed."
+        },
+        "artifacts": {
+          "type": ["array", "null"],
+          "maxItems": 100,
+          "description": "Screenshots, traces, videos and logs, by reference. Nothing is ever fetched from a url.",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "params": {
+          "type": ["object", "null"],
+          "maxProperties": 50,
+          "description": "Parameter set of a parametrised test; each set is its own result and the case shows the worst. params.browser (or else params.project) is also the result's configuration, matched by name to the project's Environments. Keys are kept up to 100 characters, values up to 500.",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean"]
+          }
+        },
+        "tags": {
+          "type": ["array", "null"],
+          "maxItems": 100,
+          "items": {
+            "type": "string"
+          },
+          "description": "Framework tags. Scanned for case references (C-123, #123, to:key:<key>). Each kept up to 200 characters."
+        },
+        "match_hints": {
+          "type": ["array", "null"],
+          "maxItems": 100,
+          "items": {
+            "type": "string"
+          },
+          "description": "Explicit case references: C-123 (the case number), #123, to:key:<automation key>. Each kept up to 200 characters."
+        },
+        "location": {
+          "$ref": "#/$defs/location"
+        },
+        "environment": {
+          "type": ["string", "null"],
+          "maxLength": 120,
+          "description": "An Environment name for this result. Overrides params.browser / params.project; the upload's environment field overrides it."
+        }
+      }
+    },
+    "attempt": {
+      "title": "ToResultAttempt",
+      "type": "object",
+      "required": ["outcome"],
+      "properties": {
+        "attempt": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "1-based attempt number (default: position in the list). Values above 1000 are read as 1000."
+        },
+        "outcome": {
+          "$ref": "#/$defs/outcome"
+        },
+        "duration_ms": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Wall time of this attempt in milliseconds."
+        },
+        "message": {
+          "type": ["string", "null"],
+          "description": "First line of this attempt's failure; kept up to 300 characters."
+        }
+      }
+    },
+    "failure": {
+      "title": "ToResultFailure",
+      "type": ["object", "null"],
+      "description": "For failed, errored and timed_out results. Stored as text, never rendered as HTML.",
+      "properties": {
+        "type": {
+          "type": ["string", "null"],
+          "description": "Error class, for example AssertionError. Kept up to 500 characters."
+        },
+        "message": {
+          "type": ["string", "null"],
+          "description": "Kept up to 4 000 characters; ANSI colour codes are removed."
+        },
+        "stack": {
+          "type": ["string", "null"],
+          "description": "Kept up to 20 000 characters; ANSI colour codes are removed."
+        },
+        "expected": {
+          "type": ["string", "null"],
+          "description": "Kept up to 4 000 characters."
+        },
+        "actual": {
+          "type": ["string", "null"],
+          "description": "Kept up to 4 000 characters."
+        }
+      }
+    },
+    "artifact": {
+      "title": "ToResultArtifact",
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "[^\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]",
+          "description": "Display name, for example trace.zip."
+        },
+        "media_type": {
+          "type": ["string", "null"],
+          "maxLength": 100,
+          "description": "Media type, for example image/png."
+        },
+        "bytes": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Size in bytes."
+        },
+        "url": {
+          "type": ["string", "null"],
+          "maxLength": 2048,
+          "pattern": "^[\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]*(?:[Hh][Tt][Tt][Pp][Ss]://[^/?#\\t\\n\\u000B\\f\\r\\u001C-\\u001F \u1680\u2000-\u2006\u2008-\u200a\u2028\u2029\u205f\u3000]+.*)?$",
+          "description": "A link to the file elsewhere (https only). Stored and shown as a link; never fetched."
+        },
+        "attachment_id": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "An attachment uploaded with the same key (POST /api/v1/attachments). It must be an attachment of the upload's project, or the whole upload is refused (0 never is)."
+        }
+      }
+    },
+    "location": {
+      "title": "ToResultLocation",
+      "type": ["object", "null"],
+      "description": "Where the test is defined, for linking back to the repository.",
+      "properties": {
+        "file": {
+          "type": ["string", "null"],
+          "description": "Path of the test file, relative to the repository. Kept up to 1 000 characters."
+        },
+        "line": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Line number."
+        }
+      }
+    }
+  }
+}

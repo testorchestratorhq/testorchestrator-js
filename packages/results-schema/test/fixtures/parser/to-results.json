@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "results": [
+    {
+      "test_id": "checkout.spec.ts › checkout › applies coupon",
+      "title": "applies coupon",
+      "outcome": "passed",
+      "duration_ms": 1234,
+      "started_at": "2026-10-27T09:15:02Z",
+      "params": { "browser": "chromium" },
+      "tags": ["@smoke"],
+      "location": { "file": "tests/checkout.spec.ts", "line": 4 },
+      "match_hints": ["C-1"],
+      "artifacts": [
+        { "name": "trace.zip", "media_type": "application/zip", "bytes": 48213, "url": "https://ci.example.com/artifacts/9876/trace.zip" }
+      ]
+    },
+    {
+      "test_id": "checkout.spec.ts › checkout › applies coupon",
+      "title": "applies coupon",
+      "outcome": "failed",
+      "duration_ms": 2210,
+      "params": { "browser": "firefox" },
+      "attempt": 2,
+      "attempts_total": 2,
+      "attempts": [
+        { "attempt": 1, "outcome": "failed", "duration_ms": 2001, "message": "Timeout waiting for #coupon" },
+        { "attempt": 2, "outcome": "failed", "duration_ms": 2210, "message": "Timeout waiting for #coupon" }
+      ],
+      "failure": {
+        "type": "TimeoutError",
+        "message": "Timeout 2000ms exceeded waiting for locator('#coupon')",
+        "stack": "TimeoutError: Timeout 2000ms exceeded\n    at tests/checkout.spec.ts:7:21"
+      },
+      "match_hints": ["C-1"],
+      "output": "[firefox] coupon field never rendered"
+    },
+    {
+      "test_id": "billing.invoices.download_pdf",
+      "title": "downloads the invoice PDF",
+      "outcome": "skipped",
+      "environment": "Staging"
+    }
+  ]
+}
