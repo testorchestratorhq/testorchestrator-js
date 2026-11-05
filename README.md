@@ -28,9 +28,8 @@ TO_DRY_RUN=1 npm run e2e   # npm pack -> fresh npm-init project -> real Playwrig
 ```
 
 The end-to-end test uploads when `TO_API_KEY` and `TO_BASE_URL` point at a TestOrchestrator stack (never
-production with a test key). CI (`.github/workflows/ci.yml`) runs on a self-hosted runner: runners are
-registered per repository in this organisation, so a runner must be registered for this repository (or the
-repository made public, for free hosted minutes) before CI runs. See [CONTRIBUTING.md](./CONTRIBUTING.md).
+production with a test key). CI (`.github/workflows/ci.yml`) runs on GitHub-hosted runners. See
+[CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 

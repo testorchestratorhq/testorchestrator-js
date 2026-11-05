@@ -1,8 +1,6 @@
 name: ci
 
-# Runners are registered per repository in this organisation and no job may use a hosted
-# `ubuntu-latest` runner (context/ci-runners.md in testorchestrator-app). Until a self-hosted runner is
-# registered for this repository (or it is public), these jobs queue and do not run.
+# Runs on GitHub-hosted runners (this repository is public, so hosted minutes are free).
 on:
   pull_request:
   push:
@@ -18,7 +16,7 @@ concurrency:
 
 jobs:
   check:
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-24.04
     env:
       OTLP_METRICS_ENABLED: 'false'
       APP_ENV: ci
@@ -41,7 +39,7 @@ jobs:
 
   node-compat:
     needs: check
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node: [18, 20, 22]
@@ -71,7 +69,7 @@ jobs:
     # Uploads to a TestOrchestrator stack: set the TO_E2E_API_KEY secret (a service key of a test
     # workspace, never production) and the TO_E2E_BASE_URL variable to enable it.
     if: ${{ vars.TO_E2E_BASE_URL != '' }}
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
